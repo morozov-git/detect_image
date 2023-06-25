@@ -12,14 +12,3 @@
     - Запустить сервер приложения
     `python main.py` 
     - Для остановки сервера используйте сочетание клавиш `CTRL+C`
-
-
-
-
-
-
-
-
-
-/Users/dmitry/Desktop/Programms/detect_image/venv/bin/python /Users/dmitry/Desktop/Programms/detect_image/main.py
-Downloading: "https://download.pytorch.org/models/resnet50-11ad3fa6.pth" to /Users/dmitry/.cache/torch/hub/checkpoints/resnet50-11ad3fa6.pth
