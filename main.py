@@ -43,7 +43,7 @@ def upload_file():
 
 @app.route('/uploads/<name>')
 def download_file(name):
-    return send_from_directory(app.config["UPLOADED_PHOTOS_DEST"], name)
+    return send_from_directory(app.config['UPLOADED_PHOTOS_DEST'], name)
 
 
 if __name__ == '__main__':
