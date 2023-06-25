@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+<!--    <title>Simple table</title>-->
+<!--    <link href="style.css" rel="stylesheet" type="text/css">-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+       <title>Image Detector</title>
+       <h1>Image Detector</h1>
+       <form method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            {{ form.photo }}
+            {% for error in form.photo.errors %}
+                   <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+            {{ form.submit }}
+       </form>
+
+       {% if file_url %}
+         <br>
+         <table>
+           <tbody>
+             <tr>
+               <th rowspan="5" scope="row">
+                    <img src="{{ file_url }}">
+               </th>
+             </tr>
+             <tr>
+               <th scope="row">Width, px</th>
+               <td>{{ image_width }}</td>
+             </tr>
+             <tr>
+               <th scope="row">Height, px</th>
+               <td>{{ image_height }}</td>
+             </tr>
+             <tr>
+               <th scope="row">Result</th>
+               <td>{{ result }}</td>
+               </tr>
+             <tr>
+               <th scope="row">Possibility, %</th>
+               <td>{{ score }}%</td>
+             </tr>
+             </tr>
+           </tbody>
+         </table>
+       {% endif %}
+
+</body>
